@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Button, StatusBar } from "react-native";
 import styles from "../styles/styles";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../assets/router";
+import { RootStackParamList } from "../routers/router";
 
 type Props = NativeStackScreenProps<RootStackParamList>;
 
