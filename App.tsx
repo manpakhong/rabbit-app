@@ -48,6 +48,7 @@ function AndroidNavigator() {
         </Drawer.Navigator>
     );
 }
+
 function StackNavigator() {
     return (
         <Stack.Navigator>
