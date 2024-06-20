@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "rabbit-app",
+    "name": "Rabbit App",
     "slug": "rabbit-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -11,10 +11,15 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
     "ios": {
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
+      "versionCode" : 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
