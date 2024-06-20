@@ -5,7 +5,6 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RoutesParams  } from "../routers/routerParams";
 
 type Props = NativeStackScreenProps<RoutesParams , "Details">;
-
 export default function ({ route, navigation }: Props) {
     const { content, title } = route.params;
 
