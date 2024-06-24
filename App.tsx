@@ -16,8 +16,8 @@ import {RoutesParams} from "./src/routers/routerParams";
 import {Routes} from "./src/routers/bottomRouter";
 
 const Stack = createNativeStackNavigator<RoutesParams>();
-const Tab = createBottomTabNavigator<Routes>();
-const Drawer = createDrawerNavigator<Routes>();
+const Tab = createBottomTabNavigator<RoutesParams>();
+const Drawer = createDrawerNavigator<RoutesParams>();
 
 
 function TabNavigator() {
@@ -56,7 +56,7 @@ function AndroidNavigator() {
 function StackNavigator() {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Home" component={Platform.OS === "ios" ? IOSNavigator : AndroidNavigator} />
+            <Stack.Screen name="RabbitApp" component={Platform.OS === "ios" ? IOSNavigator : AndroidNavigator} />
             <Stack.Screen
                 name="Details"
                 component={Details}
