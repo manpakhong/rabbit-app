@@ -4,12 +4,19 @@ import styles from "../styles/styles";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RoutesParams  } from "../routers/routerParams";
 
+
 type Props = NativeStackScreenProps<RoutesParams, "Home">;
 
 export default function Home({ navigation }: Props) {
   return (
       <View style={styles.container}>
           <StatusBar barStyle="dark-content" />
+          <Button
+              title="User Profile"
+              onPress={() =>
+                  navigation.navigate("UserProfile")
+              }
+          />
           <Button
               title="First Item"
               onPress={() =>

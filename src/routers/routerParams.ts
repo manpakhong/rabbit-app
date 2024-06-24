@@ -3,4 +3,5 @@ export type RoutesParams = {
     News: undefined;
     Settings: undefined;
     Details: { title: string; stock: number; content: string };
+    UserProfile: undefined;
 };

@@ -9,6 +9,7 @@ import Home from "./src/pages/Home";
 import Details from "./src/pages/Details";
 import News from "./src/pages/News";
 import Settings from "./src/pages/Settings";
+import UserProfile from "./src/pages/UserProfile";
 
 // import Settings from "./src/pages/Settings";
 import {RoutesParams} from "./src/routers/routerParams";
@@ -42,9 +43,12 @@ function IOSNavigator() {
 function AndroidNavigator() {
     return (
         <Drawer.Navigator>
-            <Drawer.Screen name="Tabs" component={TabNavigator} options={{ drawerLabel: 'Home' }} />
+            <Drawer.Screen name="Tabs" component={TabNavigator}
+                           options={{ drawerLabel: 'Home' }}
+            />
             <Drawer.Screen name="Settings" component={Settings} />
             <Drawer.Screen name="News" component={News} />
+            <Drawer.Screen name="UserProfile" component={UserProfile} />
         </Drawer.Navigator>
     );
 }
