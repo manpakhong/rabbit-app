@@ -22,7 +22,7 @@ const Drawer = createDrawerNavigator<RoutesParams>();
 
 function TabNavigator() {
     return (
-        <Tab.Navigator>
+        <Tab.Navigator screenOptions={{headerShown: false }}>
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="News" component={News} />
             <Tab.Screen name="Settings" component={Settings} />
@@ -32,7 +32,7 @@ function TabNavigator() {
 
 function IOSNavigator() {
     return (
-        <Tab.Navigator>
+        <Tab.Navigator screenOptions={{headerShown: false }}>
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="News" component={News} />
             <Tab.Screen name="Settings" component={Settings} />
@@ -44,7 +44,7 @@ function AndroidNavigator() {
     return (
         <Drawer.Navigator>
             <Drawer.Screen name="Tabs" component={TabNavigator}
-                           options={{ drawerLabel: 'Home' }}
+                           options={{ drawerLabel: 'Home', headerShown: true }}
             />
             <Drawer.Screen name="Settings" component={Settings} />
             <Drawer.Screen name="News" component={News} />
