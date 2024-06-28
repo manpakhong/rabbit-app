@@ -3,14 +3,18 @@ import { View, Text, Button, StatusBar } from "react-native";
 import styles from "../styles/styles";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RoutesParams  } from "../routers/routerParams";
+import * as Notifications from 'expo-notifications';
+
 
 
 type Props = NativeStackScreenProps<RoutesParams, "Home">;
 
 export default function Home({ navigation }: Props) {
-  return (
+
+    return (
       <View style={styles.container}>
           <StatusBar barStyle="dark-content" />
+
           <Button
               title="User Profile"
               onPress={() =>
