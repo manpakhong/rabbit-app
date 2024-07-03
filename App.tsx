@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Platform, View, Alert } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -90,6 +90,19 @@ function StackNavigator() {
 
 
 export default function App(){
+    const [expoPushToken, setExpoPushToken] = useState('');
+    useEffect(() => {
+        getExpoPushTokenAsync().then(token => {
+            if (token) {
+                setExpoPushToken(token);
+                // Optionally, send the token to your server here
+                Alert.alert('ExponentPushToken:', token);
+            }
+        }).catch(error => {
+            console.error('Error getting Expo push token:', error);
+        });
+    }, []);
+
     useEffect(() => {
         async function configurePushNotifications(){
             const { status } = await Notifications.getPermissionsAsync();
