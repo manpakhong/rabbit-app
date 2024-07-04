@@ -129,9 +129,9 @@ async function getExpoPushTokenAsync() {
 
     // Get the token that uniquely identifies this device
     const tokenData = await Notifications.getExpoPushTokenAsync();
-
+    const token = JSON.stringify(tokenData);
     console.log('Push token:', tokenData.data); // Log the token for testing purposes
-
+    Alert.alert('ExponentPushToken:', token);
     return tokenData.data;
 }
 
