@@ -96,6 +96,7 @@ function StackNavigator() {
  */
 async function getExpoPushTokenAsync() {
     if (!Constants.isDevice) {
+        Alert.alert('Error:', "Must use physical device for Push Notifications");
         console.error('Must use physical device for Push Notifications');
         return null;
     }
@@ -121,12 +122,14 @@ async function getExpoPushTokenAsync() {
 
     // Stop here if the user did not grant permissions
     if (finalStatus !== 'granted') {
+        Alert.alert('Error:', "Failed to get push token for push notification!");
         console.error('Failed to get push token for push notification!');
         return null;
     }
 
     // Get the token that uniquely identifies this device
     const tokenData = await Notifications.getExpoPushTokenAsync();
+
     console.log('Push token:', tokenData.data); // Log the token for testing purposes
 
     return tokenData.data;
@@ -135,13 +138,16 @@ async function getExpoPushTokenAsync() {
 export default function App(){
     const [expoPushToken, setExpoPushToken] = useState('');
     useEffect(() => {
+        Alert.alert('init message:', 'waiting for ExponentPushToken');
         getExpoPushTokenAsync().then(token => {
             if (token) {
+                
                 setExpoPushToken(token);
                 // Optionally, send the token to your server here
                 Alert.alert('ExponentPushToken:', token);
             }
         }).catch(error => {
+            Alert.alert('Error:', "Error getting Expo push token");
             console.error('Error getting Expo push token:', error);
         });
     }, []);
@@ -161,7 +167,7 @@ export default function App(){
             }
             const pushTokenData = await Notifications.getExpoPushTokenAsync();
             console.log(pushTokenData);
-
+            Alert.alert('ExponentPushToken:', JSON.stringify(pushTokenData));
             if (Platform.OS === 'android'){
                 Notifications.setNotificationChannelAsync('default', {
                     name: 'default',

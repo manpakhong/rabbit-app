@@ -2,7 +2,7 @@
   "expo": {
     "name": "rabbit-app",
     "slug": "rabbit-app",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -23,7 +23,8 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.rabbitforever.rabbitapp"
+      "bundleIdentifier": "com.rabbitforever.rabbitapp",
+      "buildNumber" : "5"
     },
     "android": {
       "adaptiveIcon": {
@@ -37,7 +38,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "d784f99a-7841-4b1d-a033-7370f0ce287a"
+        "projectId": "c1fce0ba-2aec-490d-a4b2-85235e4d5e76"
       }
     }
   }
